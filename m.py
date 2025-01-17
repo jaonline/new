@@ -8,7 +8,7 @@ import base64
 import json
 
 # Decode your secret from a JSON file
-with open("file.json", "r") as f:
+with open("file.txt", "r") as f:
     data = json.load(f)
 
 
