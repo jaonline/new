@@ -6,7 +6,7 @@ import time
 import random
 import base64
 import json
-
+from io import StringIO
 # Decode your secret from a JSON file
 with open("file.txt", "r") as f:
     data = f.read()
