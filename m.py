@@ -12,6 +12,40 @@ with open("file.txt", "r") as f:
     data = f.read()
 
 import pandas as pd
+import os
+import base64
+import pandas as pd
+from io import StringIO
+
+# Step 1: Retrieve the base64-encoded secret from the environment
+base64_string = os.environ.get("gar1")
+
+if not base64_string:
+    print("Environment variable 'gar1' is not set or empty.")
+    exit(1)
+
+# Step 2: Decode the Base64 string
+try:
+    decoded_content = base64.b64decode(base64_string).decode("utf-8")
+except Exception as e:
+    print(f"Error decoding Base64 string: {e}")
+    exit(1)
+
+# Step 3: Convert the decoded string to a pandas DataFrame
+try:
+    csv_data = StringIO(decoded_content)  # Create a file-like object from the string
+    df = pd.read_csv(csv_data)  # Read the CSV data into a DataFrame
+except Exception as e:
+    print(f"Error reading CSV data: {e}")
+    exit(1)
+
+# Step 4: Save the DataFrame as a CSV file (optional)
+output_file = "decoded_file.csv"
+df.to_csv(output_file, index=False)
+
+# Step 5: Print confirmation and preview the DataFrame
+print(f"CSV file saved as {output_file}")
+print(df.head())
 
 # Read the decoded CSV file into a DataFrame
 df = pd.read_csv("file1.csv")
