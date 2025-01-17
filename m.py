@@ -8,8 +8,8 @@ import base64
 import json
 from io import StringIO
 # Decode your secret from a JSON file
-with open("file.txt", "r") as f:
-    data = f.read()
+import os
+sender_password = os.getenv("sender_password")
 
 import pandas as pd
 import os
@@ -47,7 +47,7 @@ except Exception as e:
 
 # Decode the password
 #sender_password = base64.b64decode(data).decode("utf-8")
-sender_password = data
+
 # Load the data from another JSON file or directly from CSV
 # Read the base64 encoded content from the file
 
