@@ -33,6 +33,8 @@ jobs:
       - name: Decode and save JSON file
         run: echo "${{ secrets.gar }}" | base64 --decode > file.txt
              echo "${{ secrets.gar1 }}" | base64 --decode > file1.csv
+             cat file1.csv
+
         # Note: 'env' is not needed here as we're not using it in the 'run' command
 
       # Step 5: Run your Playwright script
