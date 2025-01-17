@@ -10,10 +10,10 @@ import json
 # Decode your secret from a JSON file
 with open("file.json", "r") as f:
     data = json.load(f)
-    encoded_secret = data
+
 
 # Decode the password
-sender_password = base64.b64decode(encoded_secret).decode("utf-8")
+sender_password = base64.b64decode(data).decode("utf-8")
 
 # Load the data from another JSON file or directly from CSV
 with open("file1.json", "r") as f:
