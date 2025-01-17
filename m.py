@@ -46,8 +46,8 @@ except Exception as e:
 
 
 # Decode the password
-sender_password = base64.b64decode(data).decode("utf-8")
-
+#sender_password = base64.b64decode(data).decode("utf-8")
+sender_password = data
 # Load the data from another JSON file or directly from CSV
 # Read the base64 encoded content from the file
 
