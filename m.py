@@ -65,24 +65,27 @@ df = df[:1]  # Start from the 14th row
 sender_email = "admin@godrivestream.com"
 
 # Email content
-subject = "Loved Your Airbnb Listing!"
+subject = "You Won’t Believe the Comfort This Trailer Offers!"
 
 # Function to send email
 def send_email(row):
     receiver_email = row['Emails']
-    body = f"""Hi {row['Title']},
+    body = f"""Hi {row['First Name']},
 
-I came across your Airbnb listing, {row['Title']}, and it looks fantastic! You’ve done an incredible job maintaining a {row['Rating']} star rating from {row['Reviews']} reviews.
+Tired of small, uncomfortable spaces while traveling? The <strong>2024 East to West Alta 3100KXT</strong> gives you more room and comfort for every trip.
 
-The reason I'm emailing you is that I can help improve your Airbnb ranking and manage your pricing effectively.
-I have a tool that can extract SEO keywords to boost your ranking. It also scrapes competitor prices, enabling you to adjust your pricing strategically and stay ahead in the market.
+<ul>
+    <li><strong>Sleeps 6 people</strong> – Great for family trips</li>
+    <li><strong>Stay comfortable</strong> all year with AC, heat, and hot water</li>
+    <li><strong>Cook easily</strong> with a full kitchen</li>
+    <li><strong>Enjoy music</strong> with Bluetooth speakers and outdoor sound</li>
+    <li><strong>Built strong</strong> for any adventure</li>
+</ul>
 
-Would you like me to show you how it works?
-
-Looking forward to hearing from you!
+Whether it’s a winter trip or a future road trip, the Alta 3100KXT makes your travels better!
 
 Best regards,  
-Jamshaid
+Jimmy
 """
 
     # Create the email
