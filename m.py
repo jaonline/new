@@ -9,7 +9,7 @@ import json
 
 # Decode your secret from a JSON file
 with open("file.txt", "r") as f:
-    data = json.load(f)
+    data = f.read()
 
 
 # Decode the password
