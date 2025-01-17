@@ -31,7 +31,7 @@ jobs:
           pip install pandas  
       # Step 4: Decode and save JSON file from base64
       - name: Decode and save JSON file
-        run: echo "${{ secrets.gar }}" | base64 --decode > file.json
+        run: echo "${{ secrets.gar }}" | base64 --decode > file.txt
              echo "${{ secrets.gar1 }}" | base64 --decode > file1.json
         # Note: 'env' is not needed here as we're not using it in the 'run' command
 
