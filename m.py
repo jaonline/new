@@ -11,6 +11,13 @@ from io import StringIO
 with open("file.txt", "r") as f:
     data = f.read()
 
+import pandas as pd
+
+# Read the decoded CSV file into a DataFrame
+df = pd.read_csv("file1.txt")
+
+# Print the DataFrame to check
+print(df)
 
 # Decode the password
 sender_password = base64.b64decode(data).decode("utf-8")
@@ -27,7 +34,7 @@ decoded_content = base64.b64decode(encoded_content)
 csv_content = decoded_content.decode("utf-8")
 
 # Load the CSV content into a pandas DataFrame
-df = pd.read_csv(StringIO(csv_content))
+#df = pd.read_csv(StringIO(csv_content))
 
 # Convert the decoded CSV string to a Pandas DataFrame
 from io import StringIO
