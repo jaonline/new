@@ -58,14 +58,7 @@ sender_password = base64.b64decode(data).decode("utf-8")
 
 # Load the data from another JSON file or directly from CSV
 # Read the base64 encoded content from the file
-with open("file1.txt", "r") as f:
-    encoded_content = f.read().strip()
 
-# Decode the base64 content
-decoded_content = base64.b64decode(encoded_content)
-
-# Convert the decoded content (binary) to a string (assuming it's a CSV)
-csv_content = decoded_content.decode("utf-8")
 
 # Load the CSV content into a pandas DataFrame
 #df = pd.read_csv(StringIO(csv_content))
