@@ -42,5 +42,9 @@ jobs:
       - name: Run Playwright script
         env:
           gar1: ${{ secrets.gar1 }}  # Ensure the secret is passed to the script
+       
+          sender_password: ${{ secrets.SENDER_PASSWORD }}
+
+        
         run: |
           python m.py
