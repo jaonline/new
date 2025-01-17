@@ -40,18 +40,10 @@ except Exception as e:
     exit(1)
 
 # Step 4: Save the DataFrame as a CSV file (optional)
-output_file = "decoded_file.csv"
-df.to_csv(output_file, index=False)
+
 
 # Step 5: Print confirmation and preview the DataFrame
-print(f"CSV file saved as {output_file}")
-print(df.head())
 
-# Read the decoded CSV file into a DataFrame
-#df = pd.read_csv("file1.csv")
-
-# Print the DataFrame to check
-print(df)
 
 # Decode the password
 sender_password = base64.b64decode(data).decode("utf-8")
@@ -67,10 +59,10 @@ sender_password = base64.b64decode(data).decode("utf-8")
 from io import StringIO
 
 # Skip rows if needed
-df = df[:13]  # Start from the 14th row
+df = df[:1]  # Start from the 14th row
 
 # Email credentials
-sender_email = "jamshaidarif63@gmail.com"
+sender_email = "admin@godrivestream.com"
 
 # Email content
 subject = "Loved Your Airbnb Listing!"
