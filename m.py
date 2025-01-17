@@ -70,9 +70,9 @@ subject = "You Won’t Believe the Comfort This Trailer Offers!"
 # Function to send email
 def send_email(row):
     receiver_email = row['Email']
-    body = f"""Hi {row['First Name']},
+    body = f"""Hi {row['First Name']},<br><br>
 
-Tired of small, uncomfortable spaces while traveling? The <strong>2024 East to West Alta 3100KXT</strong> gives you more room and comfort for every trip.
+Tired of small, uncomfortable spaces while traveling? The <strong>2024 East to West Alta 3100KXT</strong> gives you more room and comfort for every trip.<br><br>
 
 <ul>
     <li><strong>Sleeps 6 people</strong> – Great for family trips</li>
@@ -80,13 +80,14 @@ Tired of small, uncomfortable spaces while traveling? The <strong>2024 East to W
     <li><strong>Cook easily</strong> with a full kitchen</li>
     <li><strong>Enjoy music</strong> with Bluetooth speakers and outdoor sound</li>
     <li><strong>Built strong</strong> for any adventure</li>
-</ul>
+</ul><br>
 
-Whether it’s a winter trip or a future road trip, the Alta 3100KXT makes your travels better!
+Whether it’s a winter trip or a future road trip, the Alta 3100KXT makes your travels better!<br><br>
 
-Best regards,  
+Best regards,<br>
 Jimmy
 """
+
 
     # Create the email
     message = MIMEMultipart()
