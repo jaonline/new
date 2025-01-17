@@ -93,8 +93,7 @@ Jimmy
     message["From"] = sender_email
     message["To"] = receiver_email
     message["Subject"] = subject
-    message.attach(MIMEText(body, "plain"))
-
+    message.attach(MIMEText(body, "html"))
     # Send the email
     try:
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
