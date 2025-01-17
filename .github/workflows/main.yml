@@ -35,7 +35,9 @@ jobs:
              echo "${{ secrets.gar1 }}" | base64 --decode > file1.csv
              # Debugging: Check if file1.csv exists
             
-
+      - name: Decode and process secret
+        env:
+            gar1: ${{ secrets.gar1 }}
         # Note: 'env' is not needed here as we're not using it in the 'run' command
 
       # Step 5: Run your Playwright script
