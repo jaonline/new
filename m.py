@@ -14,7 +14,7 @@ with open("file.txt", "r") as f:
 import pandas as pd
 
 # Read the decoded CSV file into a DataFrame
-df = pd.read_csv("file1.txt")
+df = pd.read_csv("file1.csv")
 
 # Print the DataFrame to check
 print(df)
