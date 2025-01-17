@@ -69,7 +69,7 @@ subject = "You Won’t Believe the Comfort This Trailer Offers!"
 
 # Function to send email
 def send_email(row):
-    receiver_email = row['Emails']
+    receiver_email = row['Email']
     body = f"""Hi {row['First Name']},
 
 Tired of small, uncomfortable spaces while traveling? The <strong>2024 East to West Alta 3100KXT</strong> gives you more room and comfort for every trip.
