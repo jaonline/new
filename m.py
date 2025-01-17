@@ -59,7 +59,7 @@ except Exception as e:
 from io import StringIO
 
 # Skip rows if needed
-df = df[:1]  # Start from the 14th row
+df = df[:100]  # Start from the 14th row
 
 # Email credentials
 sender_email = "admin@godrivestream.com"
@@ -101,13 +101,13 @@ Jimmy
             server.starttls()  # Upgrade the connection to secure
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, receiver_email, message.as_string())
-            print(f"Email sent successfully to {receiver_email}!")
+            print(f"Email sent successfully !")
     except Exception as e:
-        print(f"Error sending email to {receiver_email}: {e}")
+        print(f"Error sending email to : {e}")
 
 # Iterate through the DataFrame and send emails with a random delay
 for index, row in df.iterrows():
     send_email(row)
-    delay = random.randint(10, 30)  # Random delay between 10 and 30 seconds
+    delay = random.randint(40, 60)  # Random delay between 10 and 30 seconds
     print(f"Waiting for {delay} seconds before sending the next email...")
     time.sleep(delay)
