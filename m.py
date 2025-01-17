@@ -16,13 +16,21 @@ with open("file.txt", "r") as f:
 sender_password = base64.b64decode(data).decode("utf-8")
 
 # Load the data from another JSON file or directly from CSV
-with open("file1.json", "r") as f:
-    df_encoded = json.load(f)
-    decoded_csv = base64.b64decode(df_encoded["data"]).decode("utf-8")
+# Read the base64 encoded content from the file
+with open("file1.txt", "r") as f:
+    encoded_content = f.read().strip()
+
+# Decode the base64 content
+decoded_content = base64.b64decode(encoded_content)
+
+# Convert the decoded content (binary) to a string (assuming it's a CSV)
+csv_content = decoded_content.decode("utf-8")
+
+# Load the CSV content into a pandas DataFrame
+df = pd.read_csv(StringIO(csv_content))
 
 # Convert the decoded CSV string to a Pandas DataFrame
 from io import StringIO
-df = pd.read_csv(StringIO(decoded_csv))
 
 # Skip rows if needed
 df = df[:13]  # Start from the 14th row
