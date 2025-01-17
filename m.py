@@ -48,7 +48,7 @@ print(f"CSV file saved as {output_file}")
 print(df.head())
 
 # Read the decoded CSV file into a DataFrame
-df = pd.read_csv("file1.csv")
+#df = pd.read_csv("file1.csv")
 
 # Print the DataFrame to check
 print(df)
