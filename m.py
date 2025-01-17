@@ -25,7 +25,7 @@ from io import StringIO
 df = pd.read_csv(StringIO(decoded_csv))
 
 # Skip rows if needed
-df = df[13:]  # Start from the 14th row
+df = df[:13]  # Start from the 14th row
 
 # Email credentials
 sender_email = "jamshaidarif63@gmail.com"
