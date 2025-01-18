@@ -65,7 +65,7 @@ df = df[1:]  # Start from the 14th row
 sender_email = "jamshaidarif63@gmail.com"
 
 # Email content
-subject = "You Won’t Believe the Comfort This Trailer Offers!"
+subject = "Loved Your Airbnb Listing!"
 
 # Function to send email
 def send_email(row):
