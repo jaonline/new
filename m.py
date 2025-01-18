@@ -59,7 +59,7 @@ except Exception as e:
 from io import StringIO
 
 # Skip rows if needed
-df = df[2:]  # Start from the 14th row
+df = df[1:]  # Start from the 14th row
 
 # Email credentials
 sender_email = "jamshaidarif63@gmail.com"
