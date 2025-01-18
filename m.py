@@ -74,7 +74,6 @@ def send_email(row):
     
     # Prepare email details
     receiver_email = row['Emails']
-    title = row['Title']
     rating = row['Room Rating']
     reviews = row['visibleReviewCount']
     location = row['Location']
@@ -85,7 +84,7 @@ def send_email(row):
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
         <p>Hi <strong>{host_name}</strong>,</p>
         
-        <p>I came across your Airbnb listing, "<strong>{title}</strong>" in <strong>{location}</strong>. Your <strong>{rating}</strong>-star rating from <strong>{reviews}</strong> reviews shows that your guests really enjoy their stay!</p>
+        <p>I came across your Airbnb listing, "<strong>{host_name}</strong>" in <strong>{location}</strong>. Your <strong>{rating}</strong>-star rating from <strong>{reviews}</strong> reviews shows that your guests really enjoy their stay!</p>
         
         <p>I’ve developed a tool that can help you:</p>
         <ul>
