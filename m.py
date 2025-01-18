@@ -143,6 +143,6 @@ def send_email(row):
 # Iterate through the DataFrame and send emails with a random delay
 for index, row in df.iterrows():
     send_email(row)
-    delay = random.randint(40, 60)  # Random delay between 10 and 30 seconds
+    delay = random.randint(70, 80)  # Random delay between 10 and 30 seconds
     print(f"Waiting for {delay} seconds before sending the next email...")
     time.sleep(delay)
