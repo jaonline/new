@@ -79,25 +79,46 @@ def send_email(row):
     location = row['Location']
     
     # HTML email body with proper spacing
+   def send_email(row):
+    # Extract the host's name
+    host_name = row['Host'].replace('Hosted by ', '')  # Remove "Hosted by" prefix
+    
+    # Prepare email details
+    receiver_email = row['Emails']
+    title = row['Title']
+    rating = row['Room Rating']
+    reviews = row['visibleReviewCount']
+    location = row['Location']
+    
+    # Define the new subject
+    subject = "Loved Your Airbnb Listing – Here's How I Can Help You Boost It!"
+    
+    # HTML email body with more details and spacing
     body = f"""
     <html>
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
         <p>Hi <strong>{host_name}</strong>,</p>
         
-        <p>I came across your Airbnb listing, "<strong>{host_name}</strong>" in <strong>{location}</strong>. Your <strong>{rating}</strong>-star rating from <strong>{reviews}</strong> reviews shows that your guests really enjoy their stay!</p>
+        <p>I came across your Airbnb listing, "<strong>{host_name}</strong>" in <strong>{location}</strong>, and I must say it looks fantastic! Your <strong>{rating}</strong>-star rating from <strong>{reviews}</strong> reviews shows that you’re doing a great job providing an excellent experience for your guests. It’s clear that you’re dedicated to offering a top-notch stay!</p>
         
-        <p>I’ve developed a tool that can help you:</p>
+        <p>As an Airbnb host, staying ahead of the competition is key. That’s why I’ve developed a tool that can help you take your listing to the next level:</p>
         <ul>
-            <li><strong>Analyze competitor prices</strong> to help you set competitive rates.</li>
-            <li><strong>Extract SEO keywords</strong> to improve your listing's visibility.</li>
+            <li><strong>Analyze competitor prices</strong> – Stay competitive by monitoring how your rates compare to similar listings and adjust accordingly.</li>
+            <li><strong>Extract SEO keywords</strong> – Our tool extracts SEO-friendly keywords that can help improve your listing's visibility in search results, driving more views and potential bookings.</li>
         </ul>
         
-        <p>Would you like to learn more? It’s simple to use and could really boost your bookings.</p>
+        <p>In today’s competitive market, it’s important to not only stand out but also be strategic with your pricing and visibility. With these features, I believe you could see a significant improvement in your rankings and bookings!</p>
+        
+        <p>Would you be open to learning more about how this tool works and how it can help your listing get even better results? It’s simple to use and could make a big difference in your bookings.</p>
+        
+        <p>Looking forward to hearing from you!</p>
         
         <p>Best regards,<br>Jamshaid</p>
     </body>
     </html>
     """
+
+  
 
    
 
