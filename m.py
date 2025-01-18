@@ -59,34 +59,49 @@ except Exception as e:
 from io import StringIO
 
 # Skip rows if needed
-df = df[:100]  # Start from the 14th row
+#df = df[:100]  # Start from the 14th row
 
 # Email credentials
-sender_email = "admin@godrivestream.com"
+sender_email = "jamshaidarif63@gmail.com"
 
 # Email content
 subject = "You Won’t Believe the Comfort This Trailer Offers!"
 
 # Function to send email
 def send_email(row):
-    receiver_email = row['Email']
-    body = f"""Hi {row['First Name']},<br><br>
+    # Extract the host's name
+    host_name = row['Host'].replace('Hosted by ', '')  # Remove "Hosted by" prefix
+    
+    # Prepare email details
+    receiver_email = row['Emails']
+    title = row['Title']
+    rating = row['Room Rating']
+    reviews = row['visibleReviewCount']
+    location = row['Location']
+    
+    # HTML email body with proper spacing
+    body = f"""
+    <html>
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <p>Hi <strong>{host_name}</strong>,</p>
+        
+        <p>I came across your Airbnb listing, "<strong>{title}</strong>" in <strong>{location}</strong>. Your <strong>{rating}</strong>-star rating from <strong>{reviews}</strong> reviews shows that your guests really enjoy their stay!</p>
+        
+        <p>I’ve developed a tool that can help you:</p>
+        <ul>
+            <li><strong>Analyze competitor prices</strong> to help you set competitive rates.</li>
+            <li><strong>Extract SEO keywords</strong> to improve your listing's visibility.</li>
+        </ul>
+        
+        <p>Would you like to learn more? It’s simple to use and could really boost your bookings.</p>
+        
+        <p>Best regards,<br>Jamshaid</p>
+    </body>
+    </html>
+    """
 
-Tired of small, uncomfortable spaces while traveling? The <strong>2024 East to West Alta 3100KXT</strong> gives you more room and comfort for every trip.<br><br>
+   
 
-<ul>
-    <li><strong>Sleeps 6 people</strong> – Great for family trips</li>
-    <li><strong>Stay comfortable</strong> all year with AC, heat, and hot water</li>
-    <li><strong>Cook easily</strong> with a full kitchen</li>
-    <li><strong>Enjoy music</strong> with Bluetooth speakers and outdoor sound</li>
-    <li><strong>Built strong</strong> for any adventure</li>
-</ul><br>
-
-Whether it’s a winter trip or a future road trip, the Alta 3100KXT makes your travels better!<br><br>
-
-Best regards,<br>
-Jimmy
-"""
 
 
     # Create the email
