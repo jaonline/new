@@ -59,14 +59,14 @@ except Exception as e:
 from io import StringIO
 
 # Skip rows if needed
-df = df[13:]  # Start from the 14th row
+df = df[60:]  # Start from the 14th row
 
 # Email credentials
 sender_email = "jamshaidarif944@gmail.com"
 
 # Email content
 subject = "Loved Your Airbnb Listing!"
-df["Host"]== df["Host"].str.replace("Hosted by ", "", regex=False)
+df["Host"]= df["Host"].str.replace("Hosted by ", "", regex=False)
 # Function to send email
 
     
