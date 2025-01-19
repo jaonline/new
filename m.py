@@ -68,15 +68,7 @@ sender_email = "jamshaidarif944@gmail.com"
 subject = "Loved Your Airbnb Listing!"
 
 # Function to send email
-def send_email(row):
-    # Extract the host's name
-    host_name = row['Host'].replace('Hosted by ', '')  # Remove "Hosted by" prefix
-    
-    # Prepare email details
-    receiver_email = row['Emails']
-    rating = row['Room Rating']
-    reviews = row['visibleReviewCount']
-    location = row['Location']
+
     
     # HTML email body with proper spacing
    def send_email(row):
