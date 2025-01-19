@@ -77,7 +77,7 @@ def send_email(row):
     
        # Prepare email details
     receiver_email = row['Emails']
-    host_name = row["Host"].str.replace("Hosted by ", "", regex=False
+    host_name = row["Host"].str.replace("Hosted by ", "", regex=False)
     location = row['Location']
     rating = row['Room Rating']
     reviews = row['visibleReviewCount']
