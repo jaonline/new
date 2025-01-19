@@ -66,7 +66,7 @@ sender_email = "jamshaidarif944@gmail.com"
 
 # Email content
 subject = "Loved Your Airbnb Listing!"
-
+df["Host"]== df["Host"].str.replace("Hosted by ", "", regex=False)
 # Function to send email
 
     
@@ -77,7 +77,7 @@ def send_email(row):
     
        # Prepare email details
     receiver_email = row['Emails']
-    host_name = row["Host"].str.replace("Hosted by ", "", regex=False)
+    host_name = row["Host"]
     location = row['Location']
     rating = row['Room Rating']
     reviews = row['visibleReviewCount']
