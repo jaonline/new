@@ -71,7 +71,7 @@ subject = "Loved Your Airbnb Listing!"
 
     
     # HTML email body with proper spacing
-   def send_email(row):
+def send_email(row):
     # Extract the host's name
     host_name = row['Host'].replace('Hosted by ', '')  # Remove "Hosted by" prefix
     
