@@ -62,7 +62,7 @@ from io import StringIO
 df = df[1:]  # Start from the 14th row
 
 # Email credentials
-sender_email = "jamshaidarif63@gmail.com"
+sender_email = "jamshaidarif944@gmail.com"
 
 # Email content
 subject = "Loved Your Airbnb Listing!"
