@@ -59,7 +59,7 @@ except Exception as e:
 from io import StringIO
 
 # Skip rows if needed
-df = df[9:]  # Start from the 14th row
+df = df[13:]  # Start from the 14th row
 
 # Email credentials
 sender_email = "jamshaidarif944@gmail.com"
@@ -73,7 +73,7 @@ subject = "Loved Your Airbnb Listing!"
     # HTML email body with proper spacing
 def send_email(row):
     # Extract the host's name
-    host_name = row['Host'].replace('Hosted by ', '')  # Remove "Hosted by" prefix
+    row["Host"] = row["Host"].str.replace("Hosted by ", "", regex=False) # Remove "Hosted by" prefix
     
        # Prepare email details
     receiver_email = row['Emails']
