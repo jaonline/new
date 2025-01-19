@@ -83,53 +83,50 @@ def send_email(row):
     # Extract the host's name
     host_name = row['Host'].replace('Hosted by ', '')  # Remove "Hosted by" prefix
     
-    # Prepare email details
+       # Prepare email details
     receiver_email = row['Emails']
-    title = row['Title']
+    host_name = row['Host']
+    location = row['Location']
     rating = row['Room Rating']
     reviews = row['visibleReviewCount']
-    location = row['Location']
+    guest_capacity = row['Guest_Capacity']
     
-    # Define the new subject
-    subject = "Loved Your Airbnb Listing – Here's How I Can Help You Boost It!"
+    # Define the subject
+    subject = "Following Up: Can I Help with Your Airbnb Listing?"
     
-    # HTML email body with more details and spacing
+    # Plain text email body
     body = f"""
-    <html>
-    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-        <p>Hi <strong>{host_name}</strong>,</p>
-        
-        <p>I came across your Airbnb listing, "<strong>{host_name}</strong>" in <strong>{location}</strong>, and I must say it looks fantastic! Your <strong>{rating}</strong>-star rating from <strong>{reviews}</strong> reviews shows that you’re doing a great job providing an excellent experience for your guests. It’s clear that you’re dedicated to offering a top-notch stay!</p>
-        
-        <p>As an Airbnb host, staying ahead of the competition is key. That’s why I’ve developed a tool that can help you take your listing to the next level:</p>
-        <ul>
-            <li><strong>Analyze competitor prices</strong> – Stay competitive by monitoring how your rates compare to similar listings and adjust accordingly.</li>
-            <li><strong>Extract SEO keywords</strong> – Our tool extracts SEO-friendly keywords that can help improve your listing's visibility in search results, driving more views and potential bookings.</li>
-        </ul>
-        
-        <p>In today’s competitive market, it’s important to not only stand out but also be strategic with your pricing and visibility. With these features, I believe you could see a significant improvement in your rankings and bookings!</p>
-        
-        <p>Would you be open to learning more about how this tool works and how it can help your listing get even better results? It’s simple to use and could make a big difference in your bookings.</p>
-        
-        <p>Looking forward to hearing from you!</p>
-        
-        <p>Best regards,<br>Jamshaid</p>
-    </body>
-    </html>
+    Hi {host_name},
+    
+    I hope you're doing well! I’ve reached out a couple of times before about your Airbnb listing in {location} and wanted to follow up again. Your {rating}-star rating from {reviews} reviews is impressive, and with the ability to host up to {guest_capacity} guests, it’s clear that you’ve created a fantastic place for travelers.
+    
+    That being said, I believe there’s room to make your listing even more successful. I’ve developed a tool specifically for Airbnb hosts that can help you:
+    - Analyze competitor prices to keep your rates competitive.
+    - Identify SEO-friendly keywords to make your listing more visible in searches.
+    
+    These small changes can have a big impact on your visibility and bookings, helping you stand out even further in today’s competitive market.
+    
+    I’d love to show you how this tool works and how it can help your listing grow. Could you let me know if you’re interested? I’m happy to provide more details or answer any questions.
+    
+    Looking forward to hearing from you!
+    
+    Best regards,  
+    Jamshaid
     """
-
-  
-
-   
-
-
-
+    
     # Create the email
+    from email.mime.text import MIMEText
+    from email.mime.multipart import MIMEMultipart
+    
     message = MIMEMultipart()
     message["From"] = sender_email
     message["To"] = receiver_email
     message["Subject"] = subject
-    message.attach(MIMEText(body, "html"))
+    message.attach(MIMEText(body, "plain"))
+    
+    # Output the email message
+
+
     # Send the email
     try:
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
