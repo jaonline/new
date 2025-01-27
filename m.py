@@ -59,7 +59,7 @@ except Exception as e:
 from io import StringIO
 
 # Skip rows if needed
-df = df[60:]  # Start from the 14th row
+ # Start from the 14th row
 
 # Email credentials
 sender_email = "jamshaidarif944@gmail.com"
@@ -84,25 +84,20 @@ def send_email(row):
     guest_capacity = row['Guest_Capacity']
     
     # Define the subject
-    subject = "Following Up: Can I Help with Your Airbnb Listing?"
+    subject = "Follow-Up: Boosting Your Airbnb Listing in {location}"
     
     # Plain text email body
-    body = f"""
-    Hi {host_name},
+    body = f""" Hi {host_name},
+
+    I hope you’re doing well! I wanted to follow up on your Airbnb listing, {host_name}, which has an amazing {rating} star rating from {reviews} reviews—great work!
     
-    I hope you're doing well! I’ve reached out a couple of times before about your Airbnb listing in {location} and wanted to follow up again. Your {rating}-star rating from {reviews} reviews is impressive, and with the ability to host up to {guest_capacity} guests, it’s clear that you’ve created a fantastic place for travelers.
+    I can help improve your listing’s ranking and optimize your pricing in {location}. My tool extracts SEO keywords to boost visibility and analyzes competitor prices so you can stay ahead in the market.
     
-    That being said, I believe there’s room to make your listing even more successful. I’ve developed a tool specifically for Airbnb hosts that can help you:
-    - Analyze competitor prices to keep your rates competitive.
-    - Identify SEO-friendly keywords to make your listing more visible in searches.
-    
-    These small changes can have a big impact on your visibility and bookings, helping you stand out even further in today’s competitive market.
-    
-    I’d love to show you how this tool works and how it can help your listing grow. Could you let me know if you’re interested? I’m happy to provide more details or answer any questions.
+    Would you like to see how it works?
     
     Looking forward to hearing from you!
     
-    Best regards,  
+    Best regards,
     Jamshaid
     """
     
@@ -121,7 +116,7 @@ def send_email(row):
 
     # Send the email
     try:
-        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        with smtplib.SMTP("smtp.hostinger.com", 587) as server:
             server.starttls()  # Upgrade the connection to secure
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, receiver_email, message.as_string())
@@ -132,6 +127,6 @@ def send_email(row):
 # Iterate through the DataFrame and send emails with a random delay
 for index, row in df.iterrows():
     send_email(row)
-    delay = random.randint(70, 80)  # Random delay between 10 and 30 seconds
+    delay = random.randint(10, 30)  # Random delay between 10 and 30 seconds
     print(f"Waiting for {delay} seconds before sending the next email...")
     time.sleep(delay)
