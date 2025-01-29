@@ -81,21 +81,20 @@ def send_email(row):
     location = row['Location']
     rating = row['Room Rating']
     reviews = row['visibleReviewCount']
-    guest_capacity = row['Guest_Capacity']
     
     # Define the subject
-    subject = "Follow-Up: Boosting Your Airbnb Listing in {location}"
+    subject = "{host_name}, Loved Your Airbnb Listing!"
     
     # Plain text email body
-    body = f""" Hi {host_name},
+    body = f"""Hi {host_name},
 
-    I hope you’re doing well! I wanted to follow up on your Airbnb listing, {host_name}, which has an amazing {rating} star rating from {reviews} reviews—great work!
+    I hope you're doing well! I saw your Airbnb listing and was really impressed. With a {rating}-star rating from {reviews} reviews, you’re doing a great job—well done!
     
-    I can help improve your listing’s ranking and optimize your pricing in {location}. My tool extracts SEO keywords to boost visibility and analyzes competitor prices so you can stay ahead in the market.
+    I can help you get more bookings and earn more. My tool finds the best SEO keywords to make your listing easier to find and checks competitor prices in {location} so you can stay ahead.
     
-    Would you like to see how it works?
+    Would you like to see how it works? I’d love to share more details with you!
     
-    Looking forward to hearing from you!
+    Looking forward to your reply.
     
     Best regards,
     Jamshaid
