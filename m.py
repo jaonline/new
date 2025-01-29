@@ -83,7 +83,7 @@ def send_email(row):
     reviews = row['visibleReviewCount']
     
     # Define the subject
-    subject = "{host_name}, Loved Your Airbnb Listing!"
+    subject = f"{host_name}, Loved Your Airbnb Listing!"
     
     # Plain text email body
     body = f"""Hi {host_name},
