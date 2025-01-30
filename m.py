@@ -90,7 +90,7 @@ def send_email(row):
 
     I hope you're doing well! I saw your Airbnb listing and was really impressed. With a {rating}-star rating from {reviews} reviews, you’re doing a great job—well done!
     
-    I can help you get more bookings and earn more. My tool finds the best SEO keywords to make your listing easier to find and checks competitor prices in {location} so you can stay ahead.
+    The reason I am contacting you is that I can help you get more bookings and earn more. My tool finds the best SEO keywords to make your listing easier to find and checks competitor prices in {location} so you can stay ahead.
     
     Would you like to see how it works? I’d love to share more details with you!
     
