@@ -88,15 +88,15 @@ def send_email(row):
     # Plain text email body
     body = f"""Hi {host_name},
 
-    I hope you're doing well! I saw your Airbnb listing and was really impressed. With a {rating}-star rating from {reviews} reviews, you’re doing a great job—well done!
+    I hope you’re well! I came across your Airbnb listing and was truly impressed—you’ve done an incredible job maintaining a {rating}-star rating from {reviews} reviews.
     
-    The reason I am contacting you is that I can help you get more bookings and earn more. My tool finds the best SEO keywords to make your listing easier to find and checks competitor prices in {location} so you can stay ahead.
+    I’m following up because I believe my tool can help your listing shine even brighter. It extracts top SEO keywords to boost your ranking and scrapes competitor prices, so you can set the perfect rate to attract more guests.
     
-    Would you like to see how it works? I’d love to share more details with you!
+    Would you like a quick demo to see how it works?
     
-    Looking forward to your reply.
+    Looking forward to hearing from you!
     
-    Best regards,
+    Warm regards,
     Jamshaid
     """
     
