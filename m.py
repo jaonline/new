@@ -63,7 +63,7 @@ from io import StringIO
 
 # Email credentials
 sender_email = "james@datavyn.com"
-
+df=df[:300]
 # Email content
 subject = "Loved Your Airbnb Listing!"
 df["Host"]= df["Host"].str.replace("Hosted by ", "", regex=False)
