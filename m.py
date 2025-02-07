@@ -62,7 +62,7 @@ from io import StringIO
  # Start from the 14th row
 
 # Email credentials
-sender_email = "jamshaid@datavyn.com"
+sender_email = "james@datavyn.com"
 
 # Email content
 subject = "Loved Your Airbnb Listing!"
